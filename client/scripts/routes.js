@@ -1,5 +1,5 @@
 angular
-    .module('Cakaper')
+    .module('Cakapjer')
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
         .state('tab', {
@@ -11,7 +11,8 @@ angular
             url: '/chats',
             views: {
                 'tab-chats': {
-                    templateUrl: 'client/views/chats.html'
+                    templateUrl: 'client/views/chats.html',
+                    controller: 'ChatsCtrl as chats'
                 }
             }
         });

@@ -1,4 +1,4 @@
-angular.module('Cakaper', [
+angular.module('Cakapjer', [
         'angular-meteor',
         'ionic'
     ]);
@@ -10,5 +10,5 @@ if( Meteor.isCordova ){
 }
 
 function onReady() {
-    angular.bootstrap(document, ['Cakaper']);
+    angular.bootstrap(document, ['Cakapjer']);
 }
