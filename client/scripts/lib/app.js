@@ -1,6 +1,7 @@
 angular.module('Cakapjer', [
         'angular-meteor',
-        'ionic'
+        'ionic',
+        'angularMoment'
     ]);
 
 if( Meteor.isCordova ){

@@ -31,7 +31,7 @@ Meteor.startup(function(){
             name: 'Kuzan'
         },
         {
-            picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
+            picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
             name: 'Bartholemew'
         },
         {
@@ -42,8 +42,12 @@ Meteor.startup(function(){
 
 
     chats.forEach(function(chat){
+        var message = Messages.findOne({chatId: {$exists: false}});
 
+        chat.message = message;
 
+        var chatId = Chats.insert(chat);
+        Messages.update(message._id, {$set: {chatId: chatId}});
 
     });
 });

@@ -1,6 +1,6 @@
 angular
     .module('Cakapjer')
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         $stateProvider
         .state('tab', {
             url: '/tab',
@@ -15,7 +15,18 @@ angular
                     controller: 'ChatsCtrl as chats'
                 }
             }
+        })
+        .state('tab.chat', {
+            url: '/chats/:chatId',
+            views: {
+                'tab-chats': {
+                    templateUrl: 'client/views/chat.html',
+                    controller: 'ChatCtrl as chat'
+                }
+            }
         });
+        
+        $ionicConfigProvider.tabs.position("bottom");
 
         $urlRouterProvider.otherwise('tab/chats');
     });
